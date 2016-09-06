@@ -8,4 +8,8 @@ class User < ApplicationRecord
     remember_digest = Digest::SHA1.hexdigest(@remember_token)
     self.remember_digest = remember_digest
   end
+
+  def forget
+    self.remember_digest = nil
+  end
 end
