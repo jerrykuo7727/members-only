@@ -1,2 +1,4 @@
 <%= link_to "Homepage", root_url %>
 <%= link_to "Sign in", signin_path %>
+<%= link_to "Sign out", signout_path, method: "delete" %>
+<p>Login status: <%= "true" if session[:user_id] %></p>

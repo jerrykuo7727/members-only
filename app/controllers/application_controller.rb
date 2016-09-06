@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
     @current_user = user
   end
 
+  def log_out(user)
+    session.delete(:user_id)
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
+    @current_user = nil
+  end
+
   def remember(user)
     user.remember
     cookies.permanent.signed[:user_id] = user.id
@@ -30,6 +37,10 @@ class ApplicationController < ActionController::Base
         @current_user = user
       end
     end
+  end
+
+  def logged_in?
+    session[:user_id]
   end
 
   private
