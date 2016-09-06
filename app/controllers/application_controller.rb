@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
   def log_in(user)
     session[:user_id] = user.id
-    @current_user = user
   end
 
   def log_out(user)
@@ -31,8 +30,7 @@ class ApplicationController < ActionController::Base
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by_id(user_id)
       remember_token = cookies[:remember_token]
-      if user && remember_token && 
-        Digest::SHA1.hexdigest(remember_token) == user.remember_digest
+      if user && BCrypt::Password.new(user.remember_digest).is_password?(remember_token)
         log_in user
         @current_user = user
       end
@@ -40,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    session[:user_id]
+    !current_user.nil?
   end
 
   private

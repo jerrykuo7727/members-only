@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   before_save   :downcase_email
-  before_create :remember
   validates :name, presence:true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
@@ -12,13 +11,18 @@ class User < ApplicationRecord
   has_many :posts
 
   def remember
-    @remember_token = SecureRandom.urlsafe_base64
-    remember_digest = Digest::SHA1.hexdigest(@remember_token)
-    self.remember_digest = remember_digest
+    self.remember_token = SecureRandom.urlsafe_base64
+    update_attribute(:remember_digest, User.digest(remember_token))
   end
 
   def forget
-    self.remember_digest = nil
+    update_attribute(:remember_digest, nil)
+  end
+
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
   end
 
   private
