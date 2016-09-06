@@ -5,6 +5,13 @@ class PostsController < ApplicationController
   end
 
   def create
+    post = Post.new(title: params[:post][:title],
+                    text:  params[:post][:text])
+    if post.valid?
+      post.save
+    else
+      render 'new'
+    end
   end
 
   private
