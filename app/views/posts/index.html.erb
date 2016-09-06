@@ -8,20 +8,21 @@
 <% end %>
 
 <%= will_paginate %>
-
-<% @posts.each do |post| %>
-  <div class="post">
-    <h2><%= post.title %></h2>
-    <p><%= post.text %></p>
-    <em>---- by 
-      <% if session[:user_id].nil? %>
-        <%= "********" %> 
-        <%= link_to "(Sign in to see)", signin_path %>
-      <% else %>
-        <%= "#{post.user.name}" %>
-      <% end %>
-    </em>
-  </div>
-<% end %>
+<div id="postboard">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <h2><%= post.title %></h2>
+      <p><%= post.text %></p>
+      <em>---- by 
+        <% if session[:user_id].nil? %>
+          <%= "********" %> 
+          <%= link_to "(Sign in to see)", signin_path %>
+        <% else %>
+          <%= "#{post.user.name}" %>
+        <% end %>
+      </em>
+    </div>
+  <% end %>
+</div>
 
 <%= will_paginate %>
