@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <div>
+      <%= link_to "Homepage", root_url %>
+      <% if session[:user_id].nil? %>
+          <%= link_to "Sign in", signin_path %>
+      <% else %>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
+          <%= link_to "New post", new_post_path %>
+      <% end %>
+    </div>
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
   </body>
