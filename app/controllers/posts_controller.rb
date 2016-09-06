@@ -14,8 +14,8 @@ class PostsController < ApplicationController
     end
   end
 
-  def delete
-    
+  def index
+    @post = Post.all
   end
 
   private
