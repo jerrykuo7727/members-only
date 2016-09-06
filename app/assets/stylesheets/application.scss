@@ -13,3 +13,69 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  padding-top: 60px;
+  text-align: center;
+  letter-spacing: -1px;
+  font-family: 'cwTeXHei', sans-serif;
+}
+
+.container {
+  margin: 0;
+  width: 100%;
+  padding: 0 2%;
+}
+
+header {
+  color: white;
+  font-weight: bold;
+  height: auto;
+  background-color: black;
+  position: relative;
+  a { color: white; }
+}
+
+li {
+  text-align: center;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.form {
+  text-align: left;
+  padding: 0 30%;
+  div {
+  	margin-bottom: 4px;
+  	margin-left: 8px;
+  }
+  .btn {
+  	margin-bottom: 4px;
+  }
+}
+
+form > label {
+  width: 100%;
+  font-size: 1.5em;
+  margin-top: 4px;
+}
+
+form > input {
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+#account {
+  text-align: left;
+  padding: 0 40%;
+}
