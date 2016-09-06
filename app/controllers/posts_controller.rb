@@ -19,11 +19,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    WillPaginate.per_page = 5
     if params[:name].nil?
-      @posts = Post.paginate(page: params[:page]).order(created_at: :desc)
+      @posts = Post.order(created_at: :desc).paginate(page: params[:page])
     else
-      @posts = current_user.posts.paginate(page: params[:page]).order(created_at: :desc)
+      @posts = current_user.order(created_at: :desc).posts.paginate(page: params[:page])
     end
     @username = current_user.name unless current_user.nil?
   end
