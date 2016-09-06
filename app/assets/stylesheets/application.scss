@@ -95,5 +95,13 @@ form > input {
 
 .post {
   text-align: left;
-  padding: 0 30%;
+  margin: 0 30%;
+  padding:  12px 24px;
+  border: 1px solid black;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  margin-top: 0px;
 }
