@@ -1,17 +1,17 @@
 <% provide(:username, @username) %>
 <% if params[:name].nil? %>
-  <h1>All posts</h1>
+  <h1>All Posts</h1>
 <% else %>
-  <h1>Your posts</h1>
+  <h1>Your Posts</h1>
 <% end %>
 
 <% @posts.each do |post| %>
   <div class="post">
     <h2><%= post.title %></h2>
     <p><%= post.text %></p>
-    <em>by 
+    <em>---- by 
       <% if session[:user_id].nil? %>
-        <%= "*****" %> 
+        <%= "********" %> 
         <%= link_to "(Sign in to see)", signin_path %>
       <% else %>
         <%= "#{post.user.name}" %>
