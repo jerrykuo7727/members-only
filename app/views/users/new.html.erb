@@ -1,13 +1,7 @@
 <% provide(:title, "Sign Up") %>
+<% provide(:object, @user) %>
 
-<% if @user && @user.errors.full_messages.any? %>
-  <div class="alert alert-danger" role="alert">
-  <% @user.errors.full_messages.each do |msg| %>
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    <%= msg %><br>
-  <% end %>
-  </div>
-<% end %>
+<%= render 'shared/errors', locals: {object: @user} %>
 
 <h1>Sign Up</h1>
   <div class="form">
