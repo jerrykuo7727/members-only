@@ -19,13 +19,17 @@ body {
   text-align: center;
   letter-spacing: -1px;
   font-family: 'cwTeXHei', sans-serif;
+  background-image: url(image_path('background.jpg'));
 }
 
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .container {
@@ -100,6 +104,7 @@ form > input {
   border: 1px solid black;
   border-radius: 12px;
   margin-bottom: 12px;
+  background-color: #f7f0b0;
 }
 
 h2 {
