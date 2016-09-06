@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MembersOnly</title>
+    <title><%= yield(:title) %> | Postboard</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,7 +10,7 @@
   <body>
     <header class="navbar navbar-fixed-top">
       <div class="container">
-        <%= link_to "Members Only!", root_path, id: "logo" %>
+        <%= link_to "Postboard", root_path, id: "logo" %>
         
         <nav>
           <ul class="nav navbar-nav navbar-right">

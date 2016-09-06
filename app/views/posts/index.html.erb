@@ -1,8 +1,10 @@
 <% provide(:username, @username) %>
 <% if params[:name].nil? %>
   <h1>All Posts</h1>
+  <% provide(:title, "All Posts") %>
 <% else %>
-  <h1>Your Posts</h1>
+  <h1>My Posts</h1>
+  <% provide(:title, "My Posts") %>
 <% end %>
 
 <% @posts.each do |post| %>

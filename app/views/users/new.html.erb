@@ -1,3 +1,5 @@
+<% provide(:title, "Sign Up") %>
+
 <% if @user && @user.errors.full_messages.any? %>
   <div class="alert alert-danger" role="alert">
   <% @user.errors.full_messages.each do |msg| %>
