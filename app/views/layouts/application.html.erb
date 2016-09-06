@@ -10,7 +10,7 @@
 
   <body>
     <div>
-      <%= link_to "Homepage", root_url %>
+      <%= link_to "Home", root_url %>
       <% if session[:user_id].nil? %>
           <%= link_to "Sign in", signin_path %>
       <% else %>
