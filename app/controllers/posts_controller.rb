@@ -19,8 +19,13 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    if params[:name].nil?
+      @posts = Post.all
+    else
+      @posts = current_user.posts
+    end
     @username = current_user.name unless current_user.nil?
+
   end
 
   private
