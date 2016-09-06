@@ -1,14 +1,27 @@
-<%= form_for :user do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+<div>
+  <%= form_for :user do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-  <%= f.label :remember_me do %>
-    <%= f.check_box :remember_me %>
-    <span>Remember me</span>
+    <%= f.label :remember_me do %>
+      <%= f.check_box :remember_me %>
+      <span>Remember me</span>
+    <% end %>
+
+    <%= f.submit "Login"%>
   <% end %>
-
-  <%= f.submit "Login"%>
-<% end %>
+</div>
+<div>
+<h2>Available accounts:</h2>
+<p>Email: foo@bar.com</p>
+<p>Password: foobar</p>
+--------------------------
+<p>Email: foo@bar2.com</p>
+<p>Password: foobar</p>
+--------------------------
+<p>Email: foo@bar3.com</p>
+<p>Password: foobar</p>
+<h3>Feel free to play with the server :)!</h3>
