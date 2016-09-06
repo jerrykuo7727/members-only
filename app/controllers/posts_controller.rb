@@ -14,6 +14,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def delete
+    
+  end
+
   private
 
   def logged_in_user?

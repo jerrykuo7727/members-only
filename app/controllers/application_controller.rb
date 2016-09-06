@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
       user = User.find_by_id(user_id)
       remember_token = cookies[:remember_token]
       if user && remember_token &&
-         Digest::SHA1.hexdigest(remember_token) == user.remember_digest
+        Digest::SHA1.hexdigest(remember_token) == user.remember_digest
         log_in user
         @current_user = user
       end
