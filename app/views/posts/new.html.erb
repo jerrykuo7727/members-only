@@ -1,9 +1,10 @@
+<% provide(:username, @username) %><br>
 <%= form_for :post, url: posts_path do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title %><br>
 
   <%= f.label :text %>
-  <%= f.text_area :text %>
+  <%= f.text_area :text %><br>
 
   <%= f.submit "Submit"%>
 <% end %>
