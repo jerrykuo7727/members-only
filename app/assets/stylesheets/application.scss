@@ -67,15 +67,21 @@ li {
 form > label {
   width: 100%;
   font-size: 1.5em;
-  margin-top: 4px;
 }
 
 form > input {
   width: 100%;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
 
 #account {
   text-align: left;
   padding: 0 40%;
+}
+
+.alert {
+  text-align: left;
+  border-radius: 8px;
+
+  margin: 0 30%;
 }
