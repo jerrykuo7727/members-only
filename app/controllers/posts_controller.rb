@@ -20,9 +20,9 @@ class PostsController < ApplicationController
 
   def index
     if params[:name].nil?
-      @posts = Post.all
+      @posts = Post.all.order(created_at: :desc)
     else
-      @posts = current_user.posts
+      @posts = current_user.posts.order(created_at: :desc)
     end
     @username = current_user.name unless current_user.nil?
   end
