@@ -1,7 +1,12 @@
 <% provide(:username, @username) %>
-<div>
-  <% @posts.each do |post| %>
-    <p>------------------------------------------------------------------</p>
+<% if params[:name].nil? %>
+  <h1>All posts</h1>
+<% else %>
+  <h1>Your posts</h1>
+<% end %>
+
+<% @posts.each do |post| %>
+  <div class="post">
     <h2><%= post.title %></h2>
     <p><%= post.text %></p>
     <em>by 
@@ -12,6 +17,6 @@
         <%= "#{post.user.name}" %>
       <% end %>
     </em>
-  <% end %>
-  <p>------------------------------------------------------------------</p>
-</div>
+  </div>
+<% end %>
+

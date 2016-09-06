@@ -21,6 +21,13 @@ body {
   font-family: 'cwTeXHei', sans-serif;
 }
 
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center
+}
+
 .container {
   margin: 0;
   width: 100%;
@@ -84,4 +91,9 @@ form > input {
   border-radius: 8px;
 
   margin: 0 30%;
+}
+
+.post {
+  text-align: left;
+  padding: 0 30%;
 }

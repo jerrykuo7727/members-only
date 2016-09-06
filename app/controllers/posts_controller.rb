@@ -25,7 +25,6 @@ class PostsController < ApplicationController
       @posts = current_user.posts
     end
     @username = current_user.name unless current_user.nil?
-
   end
 
   private
