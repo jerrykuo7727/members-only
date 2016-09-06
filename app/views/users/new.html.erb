@@ -1,4 +1,13 @@
-<%= form_for :user do |f| %>
+<% if @user && @user.errors.full_messages.any? %>
+  <h3>Error!!</h3>
+    <% @user.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+  <p>--------------------------------------------------</p>
+<% end %>
+
+
+<%= form_for :user, url: users_path do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
 
