@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       log_in(@user)
+      flash[:success] = "Sign up successfully. Welcome to Postboard!"
       redirect_to root_url
     else
       render 'new'

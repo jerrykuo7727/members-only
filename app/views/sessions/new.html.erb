@@ -1,4 +1,5 @@
 <% provide(:title, "Sign In") %>
+<%= render 'shared/errors', locals: {object: @user} %>
 <h1>Sign In</h1>
 <div class="form">
   <%= form_for :user do |f| %>

@@ -1,5 +1,5 @@
 <% provide(:title, "New Post") %>
-<% provide(:username, @username) %>
+<%= render 'shared/errors', locals: {object: @post} %>
 <h1>New Post</h1>
 <div class="form">
 <%= form_for :post, url: posts_path do |f| %>

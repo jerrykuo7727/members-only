@@ -1,6 +1,6 @@
 <% if locals[:object] && locals[:object].errors.full_messages.any? %>
   <div class="alert alert-danger" role="alert">
-  <% @user.errors.full_messages.each do |msg| %>
+  <% locals[:object].errors.full_messages.each do |msg| %>
     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
     <%= msg %><br>
   <% end %>

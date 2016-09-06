@@ -12,6 +12,7 @@ class PostsController < ApplicationController
                      user_id: current_user.id)
     if @post.valid?
       @post.save
+      flash[:success] = "Post submitted successfully."
       redirect_to root_url
     else
       render 'new'
