@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     if params[:name].nil?
       @posts = Post.order(created_at: :desc).paginate(page: params[:page])
     else
-      @posts = current_user.order(created_at: :desc).posts.paginate(page: params[:page])
+      @posts = current_user.posts.order(created_at: :desc).paginate(page: params[:page])
     end
     @username = current_user.name unless current_user.nil?
   end
