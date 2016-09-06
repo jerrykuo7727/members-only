@@ -66,7 +66,6 @@ li {
   padding: 0 36%;
   div {
   	margin-bottom: 4px;
-  	margin-left: 8px;
   }
   .btn {
   	margin-bottom: 4px;
@@ -122,4 +121,30 @@ h2 {
 
 #postboard {
   margin-bottom: 20px;
+}
+
+.error {
+  margin: 0;
+}
+
+.field_with_errors {
+  text-align: left;
+  margin-left: 0px;
+  div {
+    margin: 0;
+  }
+  input {
+    border: 2px solid red;
+    border-radius: 5px;
+  }
+}
+
+.field_with_errors > label {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.field_with_errors > input {
+  width: 100%;
+  margin-bottom: 12px;
 }
