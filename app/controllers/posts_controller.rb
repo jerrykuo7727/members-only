@@ -5,10 +5,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(title: params[:post][:title],
-                    text:  params[:post][:text])
-    if post.valid?
-      post.save
+    @post = Post.new(title:   params[:post][:title],
+                     text:    params[:post][:text],
+                     user_id: current_user.id)
+    if @post.valid?
+      @post.save
+      redirect_to root_url
     else
       render 'new'
     end
