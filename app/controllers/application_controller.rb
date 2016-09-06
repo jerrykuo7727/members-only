@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   def log_in(user)
     sessions[:user_id] = user.id
+    @current_user = user
   end
 
   def remember(user)
@@ -30,6 +31,8 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  private
 
   def current_user=(user)
     @current_user = user
